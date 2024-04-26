@@ -3,9 +3,10 @@ import { AuthContext } from "../Provider/AuthProvider";
 import MyListCard from "./MyListCard";
 import Swal from "sweetalert2";
 import NoData from "../Utilitis/NoData";
+import Loader from './../Utilitis/Loader';
 
 const MyList = () => {
-  const { user } = useContext(AuthContext);
+  const { user,loading } = useContext(AuthContext);
   const [spots, setSpots] = useState([]);
   useEffect(() => {
     fetch(`http://localhost:3000/spots?email=${user?.email}`)
@@ -41,6 +42,7 @@ const MyList = () => {
         }
       });
   };
+  if(loading) return <Loader/>
   if(spots.length < 1) return <NoData/>
   return (
     <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
