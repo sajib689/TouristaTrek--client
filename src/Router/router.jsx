@@ -5,6 +5,7 @@ import Register from "../Authentication/Register";
 import Login from "../Authentication/Login";
 import SpotsDetails from "../Components/SpotsDetails";
 import AddSpot from "../Components/AddSpot";
+import MyList from "../Components/MyList";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
           path: "/addspot",
           element: <AddSpot />,
         },
+        
+        {
+          path: "/mylist",
+          element: <MyList />,},
+
         {
           path: "/register",
           element: <Register />,
