@@ -4,6 +4,7 @@ import Home from './../Components/Home';
 import Register from "../Authentication/Register";
 import Login from "../Authentication/Login";
 import SpotsDetails from "../Components/SpotsDetails";
+import AddSpot from "../Components/AddSpot";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
           path: "/details/:id",
             element: <SpotsDetails />,
             loader: ({params}) => fetch(`http://localhost:3000/spots/${params.id}`)
+        },
+        {
+          path: "/addspot",
+          element: <AddSpot />,
         },
         {
           path: "/register",
