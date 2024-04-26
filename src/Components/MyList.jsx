@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import MyListCard from "./MyListCard";
+import Swal from "sweetalert2";
 
 const MyList = () => {
   const { user } = useContext(AuthContext);
@@ -10,6 +11,35 @@ const MyList = () => {
       .then((res) => res.json())
       .then((data) => setSpots(data));
   }, [user?.email]);
+  const handleDelete = (_id) => {
+    fetch(`http://localhost:3000/spots/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Spot has been deleted.",
+                icon: "success",
+              });
+            }
+            const remaining = spots.filter((spot) => spot._id !== _id);
+            setSpots(remaining);
+          });
+        }
+      });
+  };
   return (
     <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
       <h2 className="mb-4 text-2xl font-semibold leading-tight">My List</h2>
@@ -37,7 +67,11 @@ const MyList = () => {
           </thead>
           <tbody>
             {spots.map((spot) => (
-              <MyListCard key={spot._id} spot={spot}></MyListCard>
+              <MyListCard
+                key={spot._id}
+                spot={spot}
+                handleDelete={handleDelete}
+              ></MyListCard>
             ))}
           </tbody>
         </table>

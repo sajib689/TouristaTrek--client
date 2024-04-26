@@ -13,8 +13,8 @@ const Navbar = () => {
   }, [theme]);
   const handleToggle = (e) => {
     if (e.target.checked) {
-      setTheme("synthwave");
-      localStorage.setItem("theme", "synthwave");
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       setTheme("light");
       localStorage.setItem("theme", "light");
