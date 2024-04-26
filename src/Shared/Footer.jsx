@@ -19,7 +19,7 @@ const Footer = () => {
               </svg>
             </div>
             <span className="self-center text-2xl font-semibold">
-              Brand name
+            TouristaTrek
             </span>
           </a>
         </div>
@@ -140,7 +140,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-6 text-sm text-center dark:text-gray-600">
-        © 1968 Company Co. All rights reserved.
+        © 2024 Company Co. All rights reserved by TouristaTrek.
       </div>
     </footer>
   );
