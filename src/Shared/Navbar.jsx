@@ -93,6 +93,22 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
+      <div>
+            {user ? (
+              <div
+                className="tooltip tooltip-bottom z-10 cursor-pointer"
+                data-tip={user?.displayName}
+              >
+                <img
+                  alt=""
+                  className="me-4 w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100"
+                  src={user?.photoURL}
+                />
+              </div>
+            ) : (
+              <></>
+            )}
+          </div>
         <>
           {user ? (
             <Link

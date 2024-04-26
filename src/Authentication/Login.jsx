@@ -72,7 +72,7 @@ const Login = () => {
   return (
     <>
     <Helmet>
-        <title>Sajib Industrail | Login</title>
+        <title>TouristaTrek | Login</title>
       </Helmet>
     <div
       data-aos="fade-right"

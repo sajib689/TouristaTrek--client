@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
-import toast from "react-hot-toast";
+import toast from "react-hot-toast"; 
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
@@ -21,32 +21,7 @@ const Register = () => {
     setEye(false);
   };
  
-  const handleGoogle = () => {
-    google()
-      .then((result) => {
-        const user = result.user;
-        if(user) {
-            navigate("/");
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    
-  };
-  const handleGitHub = () => {
-    gitHub()
-      .then((result) => {
-        const user = result.user;
-        if(user) {
-            navigate("/");
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    navigate("/");
-  };
+  
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -55,16 +30,16 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     if (password.length < 6) {
-      toast.error("Password must be at least 6 characters long!");
-      return;
-    } else if (!/[A-Z]/.test(password)) {
-      toast.error("Password must contain at least one uppercase letter!");
-      return;
-    } else if (!/[a-z]/.test(password)) {
-      toast.error("Password must contain at least one lowercase letter!");
-      return;
-    }
-
+        toast.error("Password must be at least 6 characters long!");
+        return
+      } else if (!/[A-Z]/.test(password)) {
+        toast.error("Password must contain at least one uppercase letter!");
+        return;
+      } else if (!/[a-z]/.test(password)) {
+        toast.error("Password must contain at least one lowercase letter!");
+        return;
+      }
+      
     register(email, password)
       .then((result) => {
         const user = result.user;
@@ -94,10 +69,36 @@ const Register = () => {
         }
       });
   };
+  const handleGoogle = () => {
+    google()
+      .then((result) => {
+        const user = result.user;
+        if(user) {
+            navigate("/");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    
+  };
+  const handleGitHub = () => {
+    gitHub()
+      .then((result) => {
+        const user = result.user;
+        if(user) {
+            navigate("/");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    navigate("/");
+  };
   return (
    <>
    <Helmet>
-        <title>Sajib Industrail | Register</title>
+        <title>TouristaTrek | Register</title>
       </Helmet>
    <div
       data-aos="fade-right"
