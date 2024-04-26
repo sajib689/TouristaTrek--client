@@ -6,7 +6,7 @@ const Team = () => {
     return (
         <section className="mt-24 mb-24 py-6 dark:bg-gray-100 dark:text-gray-800">
 	<div className="container flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
-		<h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">Embark on an Adventure with Our Team</h1>
+		<h1 className="text-3xl font-bold leading-none text-center sm:text-4xl">Embark on an Adventure with Our Team</h1>
 		<p className="max-w-2xl text-center dark:text-gray-600">Get to know the passionate individuals behind TouristTrek who make your travel experiences unforgettable.</p>
 		<div className="flex flex-row flex-wrap-reverse justify-center">
 			<div className="flex flex-col justify-center m-8 text-center">
