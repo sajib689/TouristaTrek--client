@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import MyListCard from "./MyListCard";
 import Swal from "sweetalert2";
+import NoData from "../Utilitis/NoData";
 
 const MyList = () => {
   const { user } = useContext(AuthContext);
@@ -40,6 +41,7 @@ const MyList = () => {
         }
       });
   };
+  if(spots.length < 1) return <NoData/>
   return (
     <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
       <h2 className="mb-4 text-2xl font-semibold leading-tight">My List</h2>
