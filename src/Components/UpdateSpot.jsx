@@ -3,10 +3,165 @@ import { useLoaderData } from "react-router-dom";
 
 const UpdateSpot = () => {
     const spots = useLoaderData()
+    const {_id,tourist_spot_name,country_name,location,total_visitors_per_year,travel_time,average_cost} = spots;
+   const handleUpdateSpot = e => {
+    e.preventDefault()
+    const form = e.target
+   }
     return (
-        <div>
-            
-        </div>
+        <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
+        <form onSubmit={handleUpdateSpot} className="container mx-auto space-y-8">
+            <fieldset className="p-6 rounded-lg shadow-md bg-white dark:bg-gray-800">
+                <legend className="text-lg font-medium text-gray-800 dark:text-gray-200">
+                    Tourist Spot Information
+                </legend>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                    <div className="space-y-2">
+                        <label
+                            htmlFor="tourist_spot_name"
+                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >
+                            Tourist Spot Name
+                        </label>
+                        <input
+                            id="tourist_spot_name"
+                            name="tourist_spot_name"
+                            type="text"
+                            placeholder="Tourist Spot Name"
+                            className="w-full h-10 rounded-md border-gray-300 focus:border-violet-600 focus:ring focus:ring-violet-600 focus:ring-opacity-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label
+                            htmlFor="country_name"
+                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >
+                            Country
+                        </label>
+                        <input
+                            id="country_name"
+                            name="country_name"
+                            type="text"
+                            placeholder="Country"
+                            className="w-full h-10 rounded-md border-gray-300 focus:border-violet-600 focus:ring focus:ring-violet-600 focus:ring-opacity-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label
+                            htmlFor="location"
+                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >
+                            Location
+                        </label>
+                        <input
+                            id="location"
+                            name="location"
+                            type="text"
+                            placeholder="Location"
+                            className="w-full h-10 rounded-md border-gray-300 focus:border-violet-600 focus:ring focus:ring-violet-600 focus:ring-opacity-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label
+                            htmlFor="short_description"
+                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >
+                            Short Description
+                        </label>
+                        <textarea
+                            id="short_description"
+                            name="short_description"
+                            placeholder="Short Description"
+                            className="w-full h-20 rounded-md border-gray-300 focus:border-violet-600 focus:ring focus:ring-violet-600 focus:ring-opacity-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700"
+                        ></textarea>
+                    </div>
+                    <div className="space-y-2">
+                        <label
+                            htmlFor="average_cost"
+                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >
+                            Average Cost
+                        </label>
+                        <input
+                            id="average_cost"
+                            name="average_cost"
+                            type="text"
+                            placeholder="Average Cost"
+                            className="w-full h-10 rounded-md border-gray-300 focus:border-violet-600 focus:ring focus:ring-violet-600 focus:ring-opacity-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label
+                            htmlFor="seasonality"
+                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >
+                            Seasonality
+                        </label>
+                        <input
+                            id="seasonality"
+                            name="seasonality"
+                            type="text"
+                            placeholder="Seasonality"
+                            className="w-full h-10 rounded-md border-gray-300 focus:border-violet-600 focus:ring focus:ring-violet-600 focus:ring-opacity-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label
+                            htmlFor="travel_time"
+                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >
+                            Travel Time
+                        </label>
+                        <input
+                            id="travel_time"
+                            name="travel_time"
+                            type="text"
+                            placeholder="Travel Time"
+                            className="w-full h-10 rounded-md border-gray-300 focus:border-violet-600 focus:ring focus:ring-violet-600 focus:ring-opacity-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label
+                            htmlFor="total_visitors_per_year"
+                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >
+                            Total Visitors Per Year
+                        </label>
+                        <input
+                            id="total_visitors_per_year"
+                            name="total_visitors_per_year"
+                            type="text"
+                            placeholder="Total Visitors Per Year"
+                            className="w-full h-10 rounded-md border-gray-300 focus:border-violet-600 focus:ring focus:ring-violet-600 focus:ring-opacity-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label
+                            htmlFor="photoURL"
+                            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >
+                            Photo URL
+                        </label>
+                        <input
+                            id="photoURL"
+                            name="image"
+                            type="text"
+                            placeholder="Photo URL"
+                            className="w-full h-10 rounded-md border-gray-300 focus:border-violet-600 focus:ring focus:ring-violet-600 focus:ring-opacity-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700"
+                        />
+                    </div>
+                </div>
+                <div className="mt-6">
+                    <button
+                        type="submit"
+                        className="w-full py-2 bg-[#fc5a34] text-white rounded-md hover:bg-[#fc5a34] focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-50"
+                    >
+                        Add
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </section>
     );
 };
 

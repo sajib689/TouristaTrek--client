@@ -30,7 +30,7 @@ const AddSpot = () => {
         .then(data => {
             if(data){
                 Swal.fire({
-                    position: "top-end",
+                    position: "top-center",
                     icon: "success",
                     title: "Spot Add Success!",
                     showConfirmButton: false,
