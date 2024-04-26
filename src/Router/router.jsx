@@ -7,6 +7,7 @@ import SpotsDetails from "../Components/SpotsDetails";
 import AddSpot from "../Components/AddSpot";
 import MyList from "../Components/MyList";
 import AllSpots from "../Components/AllSpots";
+import UpdateSpot from "../Components/UpdateSpot";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
       {
         path: "/mylist",
         element: <MyList />,
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateSpot />,
+        loader: ({params}) => fetch(`http://localhost:3000/spots/${params.id}`)
       },
 
       {

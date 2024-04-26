@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const MyListCard = ({spot,handleDelete}) => {
@@ -27,7 +28,7 @@ const MyListCard = ({spot,handleDelete}) => {
           
         </td>
         <td className="p-3">
-        <button className="btn bg-success text-white">Update</button>
+        <Link to={`/update/${_id}`} className="btn bg-success text-white">Update</Link>
         </td>
       </tr>
     );
