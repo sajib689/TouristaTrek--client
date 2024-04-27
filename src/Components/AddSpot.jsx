@@ -40,10 +40,11 @@ const AddSpot = () => {
         })
         form.reset()
     }
+    // bg-white dark:bg-gray-800
   return (
     <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
     <form onSubmit={handlePostSpot} className="container mx-auto space-y-8">
-        <fieldset className="p-6 rounded-lg shadow-md bg-white dark:bg-gray-800">
+        <fieldset className="p-6 rounded-lg shadow-md ">
             <legend className="text-lg font-medium text-gray-800 dark:text-gray-200">
                 Tourist Spot Information
             </legend>
