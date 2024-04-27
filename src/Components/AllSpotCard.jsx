@@ -32,7 +32,7 @@ const AllSpotCard = ({ spot }) => {
                 <p><span className="font-bold">Travel Time:</span> {travel_time}</p>
             </div>
             <div>
-                <p><span className="font-bold">Total Visitors Per Year:</span> {total_visitors_per_year}</p>
+                <p><span className="font-bold">Total Visitors Per Year:</span> {total_visitors_per_year} persons</p>
                 <p><span className="font-bold">Seasonality:</span> {seasonality}</p>
             </div>
           </div>
