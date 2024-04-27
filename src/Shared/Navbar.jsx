@@ -50,18 +50,27 @@ const Navbar = () => {
       <li>
         <Link to="/allspot">All Tourists Spot</Link>
       </li>
-      <li>
-        <Link to="/addspot">Add Tourists Spot</Link>
-      </li>
+      
       <>
         {user ? (
+         <>
+         <li>
+          <Link to="/addspot">Add Tourists Spot</Link>
+        </li>
           <li>
             <Link to="/mylist">My List</Link>
           </li>
+         </>
         ) : (
           ""
         )}
       </>
+      <li>
+        <Link to="/">Contact Us</Link>
+      </li>
+      <li>
+        <Link to="/">About Us</Link>
+      </li>
     </>
   );
   return (

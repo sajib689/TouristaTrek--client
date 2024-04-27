@@ -3,33 +3,47 @@ import Loader from "../Utilitis/Loader";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import AllSpotCard from "./AllSpotCard";
+import { Typewriter } from "react-simple-typewriter";
 
 const AllSpots = () => {
   const { loading } = useContext(AuthContext);
   const spots = useLoaderData();
-  const [data, setData] = useState(spots)
-  const sortData = (data,d) => {
-    const sortSpots = [...data].sort((a, b) => b[d] - a[d])
-    return sortSpots
-}
-const handleSort = (event) => {
+  const [data, setData] = useState(spots);
+  const sortData = (data, d) => {
+    const sortSpots = [...data].sort((a, b) => b[d] - a[d]);
+    return sortSpots;
+  };
+  const handleSort = (event) => {
     const selectedValue = event.target.value;
     const sortedSpots = sortData(spots, selectedValue);
     setData(sortedSpots);
-  }
+  };
   if (loading) return <Loader />;
   return (
     <div className="mt-12 mb-24">
       <h1 className="text-4xl text-start mb-20 font-bold">
-        All Tourists Spots
+        <Typewriter
+          cursor
+          cursorBlinking
+          delaySpeed={1000}
+          deleteSpeed={25}
+          loop={0}
+          typeSpeed={75}
+          words={["All Tourists Spots"]}
+        />
       </h1>
       <div className="mb-5">
-      <select onClick={handleSort}  className="select bg-[#fc5a34] text-white  w-[120px]">
+        <select
+          onClick={handleSort}
+          className="select bg-[#fc5a34] text-white  w-[120px]"
+        >
           <option disabled selected>
-          Sort By
+            Sort By
           </option>
-          <option className="cursor-pointer" value='average_cost'>Average Cost</option>
-          </select>
+          <option className="cursor-pointer" value="average_cost">
+            Average Cost
+          </option>
+        </select>
       </div>
       <div className="grid grid-cols md:grid-cols-3 gap-6">
         {data.map((spot) => (

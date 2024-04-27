@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 const AllSpotCard = ({ spot }) => {
   const {
     _id,
@@ -12,7 +14,7 @@ const AllSpotCard = ({ spot }) => {
     seasonality
   } = spot;
   return (
-    <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+    <div data-aos="fade-down-right" className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
       <img
         src={image}
         alt=""
