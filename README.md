@@ -5,3 +5,4 @@ npm install sweetalert2
 npm i aos
 npm i react-helmet
 npm install react-spinners --save
+npm i react-simple-typewriter
