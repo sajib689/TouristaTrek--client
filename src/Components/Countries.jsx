@@ -1,19 +1,23 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CountryCard from "./CountryCard";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Typewriter } from "react-simple-typewriter";
+import { AuthContext } from "../Provider/AuthProvider";
+import Loader from "../Utilitis/Loader";
 AOS.init();
 const Countries = () => {
+  const{loading} = useContext(AuthContext)
   const [countries, setCountries] = useState([]);
   useEffect(() => {
     fetch("http://localhost:3000/countries")
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);
+  if(loading) return <Loader/>
   return (
     <div>
-      <h1 data-aos="fade-left" className="font-bold text-4xl text-center mt-48 mb-12">
+      <h1 data-aos="fade-right" className="font-bold text-4xl text-center mt-48 mb-12">
         <Typewriter
           cursor
           cursorBlinking
@@ -29,7 +33,7 @@ const Countries = () => {
         />
         
       </h1>
-      <div className="grid grid-cols md:grid-cols-3 gap-6">
+      <div  className="grid grid-cols md:grid-cols-3 gap-6">
         {countries.map((country) => (
           <CountryCard key={country._id} country={country}></CountryCard>
         ))}

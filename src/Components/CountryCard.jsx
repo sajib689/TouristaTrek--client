@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const CountryCard = ({country}) => {
     const{country_name,image,short_description} = country
     return (
-        <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+        <div data-aos="fade-right" className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
         <img
           src={image}
           alt=""
