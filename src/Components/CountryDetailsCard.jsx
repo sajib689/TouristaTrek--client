@@ -11,9 +11,8 @@ const CountryDetailsCard = ({ tourist }) => {
     average_cost,
     seasonality,
   } = tourist;
-  console.log(tourist.country_name)
   return (
-    <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+    <div data-aos="fade-down-right" className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
       <img
         src={image}
         alt=""

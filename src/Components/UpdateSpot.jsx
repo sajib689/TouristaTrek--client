@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const UpdateSpot = () => {
     const spots = useLoaderData()
@@ -41,7 +43,7 @@ const UpdateSpot = () => {
         form.reset()
     }
     return (
-        <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
+        <section data-aos="fade-down-right" className="p-6 dark:bg-gray-100 dark:text-gray-900">
         <form onSubmit={handleUpdateSpot} className="container mx-auto space-y-8">
             <fieldset className="p-6 rounded-lg shadow-md bg-white dark:bg-gray-800">
                 <legend className="text-lg font-medium text-gray-800 dark:text-gray-200">

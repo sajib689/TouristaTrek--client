@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import CountryDetailsCard from "./CountryDetailsCard";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const CountryDetails = () => {
   const countries = useLoaderData();
   return (

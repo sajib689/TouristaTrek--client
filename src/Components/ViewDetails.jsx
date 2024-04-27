@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 const ViewDetails = () => {
     const spots = useLoaderData()
     const {country_name,average_cost,image,location,seasonality,short_description,total_visitors_per_year,tourist_spot_name,travel_time,} = spots;
-    console.log(spots)
+  
     return (
         <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row">
