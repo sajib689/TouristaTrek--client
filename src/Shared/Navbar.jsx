@@ -20,7 +20,7 @@ const Navbar = () => {
       localStorage.setItem("theme", "light");
     }
   };
- 
+
   const handleSignOut = () => {
     logOut()
       .then(() => {
@@ -53,9 +53,15 @@ const Navbar = () => {
       <li>
         <Link to="/addspot">Add Tourists Spot</Link>
       </li>
-      <li>
-        <Link to="/mylist">My List</Link>
-      </li>
+      <>
+        {user ? (
+          <li>
+            <Link to="/mylist">My List</Link>
+          </li>
+        ) : (
+          ""
+        )}
+      </>
     </>
   );
   return (
@@ -93,22 +99,22 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-      <div>
-            {user ? (
-              <div
-                className="tooltip tooltip-bottom z-10 cursor-pointer"
-                data-tip={user?.displayName}
-              >
-                <img
-                  alt=""
-                  className="me-4 w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100"
-                  src={user?.photoURL}
-                />
-              </div>
-            ) : (
-              <></>
-            )}
-          </div>
+        <div>
+          {user ? (
+            <div
+              className="tooltip tooltip-bottom z-10 cursor-pointer"
+              data-tip={user?.displayName}
+            >
+              <img
+                alt=""
+                className="me-4 w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-gray-300 dark:ring-offset-gray-100"
+                src={user?.photoURL}
+              />
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
         <>
           {user ? (
             <Link

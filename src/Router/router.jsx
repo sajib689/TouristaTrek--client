@@ -8,6 +8,9 @@ import AddSpot from "../Components/AddSpot";
 import MyList from "../Components/MyList";
 import AllSpots from "../Components/AllSpots";
 import UpdateSpot from "../Components/UpdateSpot";
+import PrivateRoute from "./PrivateRoute";
+import CountryDetails from "../Components/CountryDetails";
+import ViewDetails from "../Components/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -20,9 +23,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <SpotsDetails />,
+        element: <PrivateRoute><SpotsDetails /></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/spots/${params.id}`),
+        fetch(`http://localhost:3000/spots/${params.id}`),
+      },
+      {
+        path: "/countrydetails/:country_name",
+        element: <CountryDetails/>,
+        loader: ({params}) => fetch(`http://localhost:3000/countries?country_name=${params.country_name}`)
+      },
+      {
+        path: "/viewdetails/tourist_spots/:id",
+        element: <ViewDetails/>,
+        loader: ({params}) => fetch(`http://localhost:3000/countries/tourist_spots/${params.id}`)
       },
       {
         path: "/addspot",
@@ -36,14 +49,15 @@ const router = createBrowserRouter([
 
       {
         path: "/mylist",
-        element: <MyList />,
+        element: <PrivateRoute><MyList /></PrivateRoute>,
       },
       {
         path: "/update/:id",
         element: <UpdateSpot />,
         loader: ({params}) => fetch(`http://localhost:3000/spots/${params.id}`)
       },
-
+     
+     
       {
         path: "/register",
         element: <Register />,
