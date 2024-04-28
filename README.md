@@ -6,3 +6,4 @@ npm i aos
 npm i react-helmet
 npm install react-spinners --save
 npm i react-simple-typewriter
+npm i lottie-react

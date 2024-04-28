@@ -1,10 +1,11 @@
-import { FadeLoader } from "react-spinners";
 
+import loader from '../../public/loader.json'
+import Lottie from "lottie-react";
 
 const Loader = () => {
     return (
         <div className="flex justify-center items-center h-screen">
-            <FadeLoader color="#36d7b7" />
+            <Lottie className='w-48 h-48' animationData={loader} />
         </div>
     );
 };

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
-import toast from "react-hot-toast"; 
+import toast, { Toaster } from "react-hot-toast"; 
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
@@ -97,6 +97,7 @@ const Register = () => {
   };
   return (
    <>
+   <Toaster />
    <Helmet>
         <title>TouristaTrek | Register</title>
       </Helmet>
