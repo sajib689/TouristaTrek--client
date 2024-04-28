@@ -2,8 +2,36 @@ import Lottie from "lottie-react";
 import contact from '../../public/contact.json'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import Swal from "sweetalert2";
 AOS.init();
 const Contact = () => {
+  const handleContact = e => {
+    e.preventDefault()
+    const form = e.target
+    const name = form.name.value 
+    const email = form.email.value
+    const message = form.message.value
+    const contact = {name, email, message}
+    fetch('http://localhost:3000/contact',{
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(contact)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Thanks for your feedback",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    })
+  }
   return (
     <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-100 dark:text-gray-800">
       <div className="flex flex-col justify-between">
@@ -17,12 +45,13 @@ const Contact = () => {
         </div>
         <Lottie animationData={contact} />
       </div>
-      <form data-aos="fade-down-left" noValidate="" className="space-y-6">
+      <form onSubmit={handleContact} data-aos="fade-down-left" noValidate="" className="space-y-6">
         <div>
           <label htmlFor="name" className="text-sm">
             Full name
           </label>
           <input
+          name="name"
             id="name"
             type="text"
             placeholder=""
@@ -34,6 +63,7 @@ const Contact = () => {
             Email
           </label>
           <input
+          name="email"
             id="email"
             type="email"
             className="w-full p-3 rounded dark:bg-gray-100"
@@ -44,6 +74,7 @@ const Contact = () => {
             Message
           </label>
           <textarea
+          name="message"
             id="message"
             rows="3"
             className="w-full p-3 rounded dark:bg-gray-100"
