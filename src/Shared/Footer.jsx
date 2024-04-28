@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="px-4 divide-y dark:bg-gray-100 dark:text-gray-800">
@@ -19,31 +21,33 @@ const Footer = () => {
               </svg>
             </div>
             <span className="self-center text-2xl font-semibold">
-            TouristaTrek
+              TouristaTrek
             </span>
           </a>
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase dark:text-gray-900">
-              Product
-            </h3>
+            <h3 className="tracking-wide uppercase dark:text-gray-900">Menu</h3>
             <ul className="space-y-1">
               <li>
-                <a rel="noopener noreferrer" href="#">
-                  Features
-                </a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#">
-                  Integrations
-                </a>
+                <Link to="/allspot">All Tourists Spot</Link>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#">
-                  Pricing
-                </a>
+                <Link to="/addspot">Add Tourists Spot</Link>
               </li>
+              <li>
+                <Link to="/mylist">My List</Link>
+              </li>
+              <li>
+                <Link to="/mylist">Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/mylist">About Us</Link>
+              </li>
+
               <li>
                 <a rel="noopener noreferrer" href="#">
                   FAQ
