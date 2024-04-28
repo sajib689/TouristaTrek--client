@@ -20,8 +20,8 @@ const AllSpots = () => {
   };
   if (loading) return <Loader />;
   return (
-    <div className="mt-12 mb-24">
-      <h1 className="text-4xl text-start mb-20 font-bold">
+    <div className="md:mt-12 md:mb-24 ms-2">
+      <h1 className="text-2xl md:text-4xl text-start mb-20 font-bold">
         <Typewriter
           cursor
           cursorBlinking
@@ -45,7 +45,7 @@ const AllSpots = () => {
           </option>
         </select>
       </div>
-      <div className="grid grid-cols md:grid-cols-3 gap-6">
+      <div className="grid grid-cols md:grid-cols-2  lg:grid-cols-3 gap-6">
         {data.map((spot) => (
           <AllSpotCard key={spot._id} spot={spot}></AllSpotCard>
         ))}
