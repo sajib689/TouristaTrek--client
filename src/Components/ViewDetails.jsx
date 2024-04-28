@@ -10,7 +10,7 @@ const ViewDetails = () => {
       <div className="hero-content flex-col lg:flex-row">
         <img
           src={image}
-          className="rounded-lg shadow-2xl"
+          className="rounded-lg shadow-2xl md:w-[600px]"
         />
         <div>
           <h1 className="text-5xl font-bold">{tourist_spot_name}</h1>
