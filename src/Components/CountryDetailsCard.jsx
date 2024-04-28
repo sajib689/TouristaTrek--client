@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 const CountryDetailsCard = ({ tourist }) => {
   const {
     id,
@@ -18,7 +20,7 @@ const CountryDetailsCard = ({ tourist }) => {
         alt=""
         className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500"
       />
-      <div className="flex flex-col justify-between p-6 space-y-8">
+      <div data-aos="fade-down-left" className="flex flex-col justify-between p-6 space-y-8">
         <div className="space-y-2">
           <h2 className="text-3xl font-semibold tracking-wide">
             {tourist_spot_name.slice(0, 15)}

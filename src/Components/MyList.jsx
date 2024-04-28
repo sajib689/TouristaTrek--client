@@ -14,34 +14,35 @@ const MyList = () => {
       .then((data) => setSpots(data));
   }, [user?.email]);
   const handleDelete = (_id) => {
-    fetch(`http://localhost:3000/spots/${_id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!",
-          }).then((result) => {
-            if (result.isConfirmed) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/spots/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data) {
               Swal.fire({
                 title: "Deleted!",
                 text: "Spot has been deleted.",
                 icon: "success",
               });
+              const remaining = spots.filter((spot) => spot._id !== _id);
+              setSpots(remaining);
             }
-            const remaining = spots.filter((spot) => spot._id !== _id);
-            setSpots(remaining);
           });
-        }
-      });
+      }
+    });
   };
+  
   if(loading) return <Loader/>
   if(spots.length < 1) return <NoData/>
   return (

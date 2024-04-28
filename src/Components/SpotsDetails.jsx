@@ -1,16 +1,18 @@
 import { useLoaderData } from "react-router-dom";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const SpotsDetails = () => {
   const spots = useLoaderData();
   const {country_name,average_cost,image,location,seasonality,short_description,total_visitors_per_year,tourist_spot_name,travel_time,} = spots;
   return (
     <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row">
-        <img
+        <img data-aos="fade-down-right"
           src={image}
           className="rounded-lg shadow-2xl"
         />
-        <div>
+        <div data-aos="fade-down-left">
           <h1 className="text-5xl font-bold">{tourist_spot_name}</h1>
           <p className="py-6">
            {short_description}
