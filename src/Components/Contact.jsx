@@ -23,7 +23,7 @@ const Contact = () => {
     .then(data => {
       if(data) {
         Swal.fire({
-          position: "top-end",
+          position: "top-center",
           icon: "success",
           title: "Thanks for your feedback",
           showConfirmButton: false,

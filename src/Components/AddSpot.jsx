@@ -88,13 +88,24 @@ const AddSpot = () => {
               >
                 Country
               </label>
-              <input
+              <select name="country_name" className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  Select Country
+                </option>
+                <option value='Bangladesh'>Bangladesh</option>
+                <option value='Thailand'>Thailand</option>
+                <option value='Indonesia'>Indonesia</option>
+                <option value='Malaysia'>Malaysia</option>
+                <option value='Vietnam'>Vietnam</option>
+                <option value='Cambodia'>Cambodia</option>
+              </select>
+              {/* <input
                 id="country_name"
                 name="country_name"
                 type="text"
                 placeholder="Country"
                 className="w-full h-10 rounded-md border-gray-300 focus:border-violet-600 focus:ring focus:ring-violet-600 focus:ring-opacity-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700"
-              />
+              /> */}
             </div>
             <div className="space-y-2">
               <label
