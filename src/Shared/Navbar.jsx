@@ -7,7 +7,7 @@ const Navbar = () => {
   const [theme, setTheme] = useState("light");
   const { user, logOut } = useContext(AuthContext);
   useEffect(() => {
-    localStorage.setItem("theme", theme);
+    // localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
@@ -50,17 +50,17 @@ const Navbar = () => {
       <li>
         <Link to="/allspot">All Tourists Spot</Link>
       </li>
-      
+
       <>
         {user ? (
-         <>
-         <li>
-          <Link to="/addspot">Add Tourists Spot</Link>
-        </li>
-          <li>
-            <Link to="/mylist">My List</Link>
-          </li>
-         </>
+          <>
+            <li>
+              <Link to="/addspot">Add Tourists Spot</Link>
+            </li>
+            <li>
+              <Link to="/mylist">My List</Link>
+            </li>
+          </>
         ) : (
           ""
         )}
@@ -100,7 +100,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to="/" className="text-xl">
+        <Link to="/" className="text-[14px] md:text-xl">
           TouristaTrek
         </Link>
       </div>

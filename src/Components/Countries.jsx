@@ -33,7 +33,7 @@ const Countries = () => {
         />
         
       </h1>
-      <div  className="grid grid-cols md:grid-cols-3 gap-6">
+      <div  className="grid grid-cols md:grid-cols-3 md:gap-6 mx-auto">
         {countries.map((country) => (
           <CountryCard key={country._id} country={country}></CountryCard>
         ))}

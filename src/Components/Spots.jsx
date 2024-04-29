@@ -29,7 +29,7 @@ const Spots = () => {
           words={["Tourists Spots", "Tourists Spots", "Tourists Spots"]}
         />
       </h1>
-      <div className="grid grid-cols md:grid-cols-3 gap-6">
+      <div className="grid grid-cols md:grid-cols-3 md:gap-6 mx-auto">
         {touristSpots.slice(0, 6).map((spot) => (
           <SpotsCard key={spot._id} spot={spot}></SpotsCard>
         ))}
