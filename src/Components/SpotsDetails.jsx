@@ -10,7 +10,7 @@ const SpotsDetails = () => {
       <div className="hero-content flex-col lg:flex-row">
         <img data-aos="fade-down-right"
           src={image}
-          className="rounded-lg shadow-2xl"
+          className="rounded-lg shadow-2xl  md:w-[600px]"
         />
         <div data-aos="fade-down-left">
           <h1 className="text-5xl font-bold">{tourist_spot_name}</h1>

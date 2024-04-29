@@ -10,7 +10,6 @@ import AllSpots from "../Components/AllSpots";
 import UpdateSpot from "../Components/UpdateSpot";
 import PrivateRoute from "./PrivateRoute";
 import CountryDetails from "../Components/CountryDetails";
-import ViewDetails from "../Components/ViewDetails";
 import Contact from "../Components/Contact";
 import About from "../Components/About";
 
@@ -38,19 +37,10 @@ const router = createBrowserRouter([
         element: <CountryDetails />,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:3000/countries?country_name=${params.country_name}`
+            `http://localhost:3000/countries/${params.country_name}`
           ),
       },
-      {
-        path: "/viewdetails/tourist_spots/:id",
-        element: (
-          <PrivateRoute>
-            <ViewDetails />
-          </PrivateRoute>
-        ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/countries/tourist_spots/${params.id}`),
-      },
+     
       {
         path: "/addspot",
         element: <AddSpot />,

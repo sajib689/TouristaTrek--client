@@ -30,7 +30,7 @@ const AllSpotCard = ({ spot }) => {
           </p>
           <div>
             <div>
-                <p><span className="font-bold">Average Cost:</span> {average_cost} per person</p>
+                <p><span className="font-bold">Average Cost: $ </span> {average_cost} per person</p>
                 <p><span className="font-bold">Travel Time:</span> {travel_time}</p>
             </div>
             <div>

@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 AOS.init();
 const CountryDetailsCard = ({ tourist }) => {
   const {
-    id,
+    _id,
     tourist_spot_name,
     image,
     short_description,
@@ -32,7 +32,7 @@ const CountryDetailsCard = ({ tourist }) => {
           <p>Location: {location}</p>
           <p>Seasonality: {seasonality}</p>
           <p>Average Cost: {average_cost} per person</p>
-          <Link to={`/viewdetails/tourist_spots/${id}`} className="btn bg-[#fc5a34] text-white hover:bg-[#fc5a36] mt-5">
+          <Link to={`/details/${_id}`} className="btn bg-[#fc5a34] text-white hover:bg-[#fc5a36] mt-5">
             View Details
           </Link>
         </div>
