@@ -30,14 +30,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/spots/${params.id}`),
+          fetch(`https://assignment-10-mocha.vercel.app/spots/${params.id}`),
       },
       {
         path: "/countrydetails/:country_name",
         element: <CountryDetails />,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:3000/countries/${params.country_name}`
+            `https://assignment-10-mocha.vercel.app/countries/${params.country_name}`
           ),
       },
      
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
       {
         path: "/allspot",
         element: <AllSpots />,
-        loader: () => fetch("http://localhost:3000/spots"),
+        loader: () => fetch("https://assignment-10-mocha.vercel.app/spots"),
       },
 
       {
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <UpdateSpot />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/spots/${params.id}`),
+          fetch(`https://assignment-10-mocha.vercel.app/spots/${params.id}`),
       },
 
       {

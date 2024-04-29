@@ -21,7 +21,7 @@ const UpdateSpot = () => {
         const total_visitors_per_year = form.total_visitors_per_year.value
         
         const spots = {image,tourist_spot_name,country_name,location,short_description,average_cost,seasonality,travel_time,total_visitors_per_year}
-        fetch( `http://localhost:3000/spots/${_id}`,{
+        fetch( `https://assignment-10-mocha.vercel.app/spots/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

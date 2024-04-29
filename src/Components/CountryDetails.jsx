@@ -8,7 +8,7 @@ const CountryDetails = () => {
   const {country_name} = useParams()
   const [data, setData] = useState([])
   useEffect(() => {
-    fetch('http://localhost:3000/spots')
+    fetch('https://assignment-10-mocha.vercel.app/spots')
     .then(res => res.json())
     .then(data => setData(data))
   },[])

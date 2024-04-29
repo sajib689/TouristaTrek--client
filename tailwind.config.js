@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         nunita: '"Nunito Sans", sans-serif'
       },
-      themes: ["light", "synthwave"],
+      themes: ["light", "dark"],
     },
   },
   plugins: [require("daisyui")],

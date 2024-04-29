@@ -33,7 +33,7 @@ const AddSpot = () => {
       travel_time,
       total_visitors_per_year,
     };
-    fetch("http://localhost:3000/spots", {
+    fetch("https://assignment-10-mocha.vercel.app/spots", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -12,7 +12,7 @@ const Contact = () => {
     const email = form.email.value
     const message = form.message.value
     const contact = {name, email, message}
-    fetch('http://localhost:3000/contact',{
+    fetch('https://assignment-10-mocha.vercel.app/contact',{
       method: 'POST',
       headers: {
         'content-type': 'application/json'
