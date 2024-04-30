@@ -108,7 +108,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <div>
+        <div className="me-3">
           {user ? (
             <div
               className="tooltip tooltip-bottom z-10 cursor-pointer"

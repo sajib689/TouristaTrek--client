@@ -17,7 +17,7 @@ const CountryDetails = () => {
   return (
     <div className="mt-12">
       <h1 className="text-4xl mb-12">All Spots</h1>
-      <div className="grid grid-cols md:grid-cols-3 gap-6 ">
+      <div className="grid grid-cols md:grid-cols-3 gap-6 ms-4 md:ms-0">
         {filterSpots.map((tourist) => (
           <CountryDetailsCard
             key={tourist.country_name}

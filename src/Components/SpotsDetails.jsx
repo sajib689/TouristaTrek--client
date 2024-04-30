@@ -6,7 +6,7 @@ const SpotsDetails = () => {
   const spots = useLoaderData();
   const {country_name,average_cost,image,location,seasonality,short_description,total_visitors_per_year,tourist_spot_name,travel_time,} = spots;
   return (
-    <div className="hero min-h-screen">
+    <div className="hero min-h-screen ms-4 md:ms-0">
       <div className="hero-content flex-col lg:flex-row">
         <img data-aos="fade-down-right"
           src={image}
