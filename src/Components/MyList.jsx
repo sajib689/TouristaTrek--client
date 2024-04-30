@@ -9,7 +9,7 @@ const MyList = () => {
   const { user,loading } = useContext(AuthContext);
   const [spots, setSpots] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/spots?email=${user?.email}`)
+    fetch(`https://assignment-10-mocha.vercel.app/spots?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setSpots(data));
   }, [user?.email]);
