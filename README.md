@@ -3,7 +3,7 @@
 Welcome to TouristaTrek, your ultimate guide to exploring the diverse and vibrant region of Southeast Asia. Discover the rich cultural heritage, stunning landscapes, and exotic destinations that await you in this enchanting part of the world!
 
 ## Live Site URL
-TouristaTrek - (Replace # with the actual URL when deployed)
+TouristaTrek - (#https://inspiring-sprinkles-18cc70.netlify.app/)
 
 ## Featured Destinations in Southeast Asia
 
