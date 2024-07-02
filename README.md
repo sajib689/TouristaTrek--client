@@ -3,7 +3,7 @@
 Welcome to TouristaTrek, your ultimate guide to exploring the diverse and vibrant region of Southeast Asia. Discover the rich cultural heritage, stunning landscapes, and exotic destinations that await you in this enchanting part of the world!
 
 ## Live Site URL
-TouristaTrek - (#https://inspiring-sprinkles-18cc70.netlify.app/)
+[TouristaTrek](https://inspiring-sprinkles-18cc70.netlify.app/)
 
 ## Featured Destinations in Southeast Asia
 
@@ -56,22 +56,10 @@ TouristaTrek - (#https://inspiring-sprinkles-18cc70.netlify.app/)
 - **Additional Tools:** Axios (for API requests), Heroku (for deployment), MongoDB Atlas (for cloud database hosting)
 
 ## How to Run Locally
-1. Clone this repository to your local machine.
-2. Navigate to the project directory.
-3. Install dependencies using `npm install`.
-4. Start the server using `npm start`.
-5. Open your web browser and go to http://localhost:3000 to access the application.
+1. Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/yourusername/touristatrek.git
+#cd touristatrek
+#npm install
+#npm run dev
 
-## Contributors
-- Your Name - (Replace # with your GitHub profile URL)
-
-## Dependencies
-- @material-tailwind/react
-- react-responsive-carousel
-- react-hot-toast
-- sweetalert2
-- aos
-- react-helmet
-- react-spinners
-- react-simple-typewriter
-- lottie-react
